@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="LUXNEST: Luxury Real Estate Properties with Premium Amenities"
+    />
+    <title>LUXNEST - Luxury Real Estate</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="shortcut icon"
+      href="assets/img/favicon.ico"
+      type="image/x-icon"
+    />
+  </head>
+  <body>
+    <!-- Header -->
+
+    <header class="sticky-header">
+      <nav class="navbar">
+        <button class="burger" aria-label="Toggle menu">
+          <span class="line"></span>
+          <span class="line"></span>
+          <span class="line"></span>
+        </button>
+        <h1><a href="#home" aria-label="LUXNEST Homepage">LUXNEST</a></h1>
+        <ul class="nav-links">
+          <li><a href="#home" aria-label="Go to Home Section">Home</a></li>
+          <li><a href="#about" aria-label="Go to About Section">About</a></li>
+          <li>
+            <a href="#contact" aria-label="Go to Contact Section">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-content">
+        <img
+          src="./assets/img/sea1.jpeg"
+          alt="Luxury Real Estate"
+          class="hero-replacement-image"
+        />
+        <h2>Luxury Real Estate</h2>
+        <p>
+          Discover exclusive properties with premium amenities and stunning
+          views.
+        </p>
+        <ul class="price-list">
+          <li>
+            <img
+              src="assets/img/icon-check.png"
+              alt="Apartment Icon"
+              class="price-icon"
+            />
+            Apartments: from $2 000 000
+          </li>
+          <li>
+            <img
+              src="assets/img/icon-check.png"
+              alt="Villa Icon"
+              class="price-icon"
+            />
+            Villas: from $10 000 000
+          </li>
+          <li>
+            <img
+              src="assets/img/icon-check.png"
+              alt="Penthouse Icon"
+              class="price-icon"
+            />
+            Penthouses: from $25 000 000
+          </li>
+        </ul>
+        <button class="cta-button">ORDER</button>
+      </div>
+      <div
+        class="hero-image"
+        role="img"
+        aria-label="Luxury Real Estate Image"
+      ></div>
+    </section>
+
+    <!-- Advantages Section -->
+<!-- Advantages Section -->
+<section id="about" class="advantages">
+  <picture class="advantages-image left" role="img" aria-label="Luxury Property Advantage">
+    <img src="assets/img/house2.jpeg" alt="Luxury Property Advantage Left" />
+  </picture>
+  <div class="advantages-content">
+    <div class="advantages-list">
+      <div class="advantage">
+        <img
+          src="assets/img/icon-lotus.png"
+          alt="Exclusive Location Icon"
+          class="advantage-icon"
+        />
+        <p>
+          Exclusive Locations, our properties are situated in prime locations, offering unmatched access to prestigious areas and spectacular views.
+        </p>
+      </div>
+      <div class="advantage">
+        <img
+          src="assets/img/icon-lotus.png"
+          alt="Premium Amenities Icon"
+          class="advantage-icon"
+        />
+        <p>
+          Premium Amenities, each property boasts luxurious amenities like private pools, gyms, and smart home features, designed for your comfort.
+        </p>
+      </div>
+      <div class="advantage">
+        <img
+          src="assets/img/icon-lotus.png"
+          alt="Stunning Views Icon"
+          class="advantage-icon"
+        />
+        <p>
+          Stunning Views, enjoy breathtaking views of the city, ocean, or nature, right from your living room.
+        </p>
+      </div>
+      <div class="advantage">
+        <img
+          src="assets/img/icon-lotus.png"
+          alt="High-End Security Icon"
+          class="advantage-icon"
+        />
+        <p>
+          High-End Security, our properties are equipped with top-tier security, including 24/7 surveillance and gated entrances, for your peace of mind.
+        </p>
+      </div>
+    </div>
+    <button class="adv-button">ORDER</button>
+  </div>
+  <picture class="advantages-image right" role="img" aria-label="Luxury Property Advantage">
+    <img src="assets/img/house6.jpeg" alt="Luxury Property Advantage Right" />
+  </picture>
+</section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="form-container">
+        <div class="form-left">
+          <h2>Feedback Form</h2>
+          <form id="contact-form" aria-labelledby="feedback-form">
+            <label for="name"></label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Name"
+              required
+            />
+
+            <label for="email"></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="E-mail"
+              required
+            />
+
+            <div class="control-group">
+              <label class="control control-checkbox">
+                I accept the privacy policy
+                <input type="checkbox" id="policy" name="policy" />
+                <div class="control_indicator"></div>
+              </label>
+            </div>
+
+            <button class="submit-btn">Submit form</button>
+          </form>
+
+          <!-- Success message -->
+          <div id="success-message" class="hidden" role="alert">
+            <p>Thank you for your feedback! We will get back to you soon.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Navigation -->
+    <nav aria-labelledby="footer-nav">
+      <ul class="links-footer">
+        <li><a href="#">Luxury</a></li>
+        <li><a href="#">Eliteness</a></li>
+        <li><a href="#">Prestige</a></li>
+      </ul>
+    </nav>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo">
+          <h2><a href="#home" aria-label="LUXNEST Homepage">LUXNEST</a></h2>
+        </div>
+
+        <!-- Social Icons -->
+        <div class="footer-socials">
+          <a href="#" aria-label="Instagram"
+            ><img src="assets/img/insta-icons.svg" alt="Instagram"
+          /></a>
+          <a href="#" aria-label="TikTok"
+            ><img src="assets/img/tiktok-icons.svg" alt="TikTok"
+          /></a>
+          <a href="#" aria-label="LinkedIn"
+            ><img src="assets/img/linkedin-icons.svg" alt="LinkedIn"
+          /></a>
+          <a href="#" aria-label="Facebook"
+            ><img src="assets/img/facebook-icons.svg" alt="Facebook"
+          /></a>
+          <a href="#" aria-label="Telegram"
+            ><img src="assets/img/tg-icons.svg" alt="Telegram"
+          /></a>
+          <a href="#" aria-label="YouTube"
+            ><img src="assets/img/youtube-icons.svg" alt="YouTube"
+          /></a>
+        </div>
+
+        <!-- Footer Button -->
+        <div class="footer-button">
+          <button class="footer-btn">ORDER</button>
+        </div>
+    </footer>
+
+    <!-- Footer Docs -->
+    <section class="footer-docs">
+      <p>
+        &copy; 2024, Copyright. <a href="#">Privacy policy</a>
+        <a href="#">Terms of Use</a>
+      </p>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
