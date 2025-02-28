@@ -1,79 +1,61 @@
+document.addEventListener("DOMContentLoaded", () => {
+  // Header scroll effect
+  const header = document.querySelector(".sticky-header");
+  window.addEventListener("scroll", () => {
+    header.classList.toggle("scrolled", window.scrollY > 50);
+  });
 
-        // Скролл хедера
-document.addEventListener('DOMContentLoaded', () => {
-    const header = document.querySelector('.sticky-header');
-
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
+  // Smooth scroll for navigation
+  document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+    anchor.addEventListener("click", (e) => {
+      e.preventDefault();
+      document.querySelector(anchor.getAttribute("href")).scrollIntoView({
+        behavior: "smooth",
+      });
     });
+  });
+
+  // Burger menu toggle
+  const burger = document.querySelector(".burger");
+  const navLinks = document.querySelector(".nav-links");
+  burger.addEventListener("click", () => {
+    burger.classList.toggle("active");
+    navLinks.classList.toggle("active");
+  });
+
+  // Animation delays for advantages and properties
+  const advantageCards = document.querySelectorAll(".advantage-card");
+  const propertyCards = document.querySelectorAll(".property-card");
+
+  advantageCards.forEach((card, index) => {
+    card.style.animationDelay = `${index * 0.2}s`;
+  });
+
+  propertyCards.forEach((card, index) => {
+    card.style.animationDelay = `${index * 0.2}s`;
+  });
+
+  // Contact form handling
+  const form = document.getElementById("contact-form");
+  const successMessage = document.getElementById("success-message");
+
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const policy = document.getElementById("policy").checked;
+
+    if (!name || !email || !policy) {
+      alert("Please fill out all fields and accept the privacy policy.");
+      return;
+    }
+
+    successMessage.classList.remove("hidden");
+    form.reset();
+
+    setTimeout(() => {
+      successMessage.classList.add("hidden");
+    }, 5000);
+  });
 });
-
-
-
-      // Плавный скролл по навигации
-      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-        anchor.addEventListener("click", function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute("href")).scrollIntoView({
-            behavior: "smooth",
-          });
-        });
-      });
-
-
-      document.querySelector('.burger').addEventListener('click', () => {
-        const navLinks = document.querySelector('.nav-links');
-        navLinks.classList.toggle('active');
-      });
-      
-      
-
-
-
-        // Фоорма обратной связи
-const form = document.getElementById("contact-form");
-const nameInput = document.getElementById("name");
-const emailInput = document.getElementById("email");
-const policyInput = document.getElementById("policy");
-const successMessage = document.getElementById("success-message");
-
-// Обработчик отправки формы
-form.addEventListener("submit", function (event) {
-  event.preventDefault(); 
-
-  // Проверяем, что поля заполнены
-  if (!nameInput.value || !emailInput.value || !policyInput.checked) {
-    alert("Please fill out all fields and accept the privacy policy.");
-    return;
-  }
-
-  // Показываем уведомление об успешной отправке
-  successMessage.classList.remove("hidden");
-
-  // Очистка формы
-  form.reset();
-
-  // Прячем уведомление через 5 секунд
-  setTimeout(() => {
-    successMessage.classList.add("hidden");
-  }, 5000);
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
