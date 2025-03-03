@@ -423,6 +423,12 @@ input[type="email"]:focus {
   font-size: 3rem;
   color: #d4af37;
   margin-bottom: 0.5rem;
+  text-decoration: none;
+}
+
+.footer-logo a {
+  text-decoration: none;
+  color: inherit;
 }
 
 .footer-logo .footer-tagline {
@@ -481,9 +487,57 @@ input[type="email"]:focus {
 
 .footer-bottom a:hover { color: #fff; }
 
+/* Медиа-запрос для маленьких экранов */
 @media (max-width: 768px) {
-  .footer-content { flex-direction: column; gap: 3rem; }
-  .footer-nav { flex-direction: column; gap: 1rem; }
+  .footer {
+    padding: 3rem 5% 1.5rem; /* Уменьшаем отступы для компактности */
+  }
+
+  .footer-content { 
+    flex-direction: column; 
+    gap: 2rem; /* Уменьшаем зазор между элементами */
+    align-items: center; /* Центрируем содержимое */
+  }
+
+  .footer-logo h2 {
+    font-size: 2rem; /* Уменьшаем логотип */
+  }
+
+  .footer-logo .footer-tagline {
+    font-size: 0.9rem; /* Уменьшаем слоган */
+  }
+
+  .footer-nav { 
+    flex-direction: column; 
+    gap: 1rem; 
+    width: 100%; /* Растягиваем на всю ширину */
+    padding: 0; 
+  }
+
+  .footer-nav a {
+    font-size: 1rem; /* Чуть уменьшаем шрифт для аккуратности */
+    display: block; /* Делаем ссылки блочными для удобства нажатия */
+    padding: 0.5rem 0; /* Добавляем вертикальные отступы */
+  }
+
+  .footer-socials {
+    gap: 1.5rem; /* Уменьшаем зазор между иконками */
+    justify-content: center; /* Центрируем иконки */
+  }
+
+  .footer-socials img {
+    width: 25px; /* Уменьшаем иконки */
+    height: 25px;
+  }
+
+  .footer-bottom {
+    font-size: 0.8rem; /* Уменьшаем текст внизу */
+    padding-top: 1.5rem; /* Уменьшаем отступ сверху */
+  }
+
+  .footer-bottom a {
+    margin: 0 0.3rem; /* Уменьшаем горизонтальные отступы между ссылками */
+  }
 }
 
 /* Checkbox */
