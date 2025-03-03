@@ -36,26 +36,33 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Contact form handling
-  const form = document.getElementById("contact-form");
-  const successMessage = document.getElementById("success-message");
+  document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
 
-  form.addEventListener("submit", (e) => {
-    e.preventDefault();
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
 
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const policy = document.getElementById("policy").checked;
+      // Простая валидация
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const policy = document.getElementById('policy').checked;
 
-    if (!name || !email || !policy) {
-      alert("Please fill out all fields and accept the privacy policy.");
-      return;
-    }
+      if (name && email && policy) {
+        // Скрываем форму
+        form.style.display = 'none';
 
-    successMessage.classList.remove("hidden");
-    form.reset();
+        // Показываем всплывающее уведомление
+        successMessage.classList.remove('hidden');
+        successMessage.classList.add('visible');
 
-    setTimeout(() => {
-      successMessage.classList.add("hidden");
-    }, 5000);
-  });
-});
+        // Скрываем уведомление через 3 секунды
+        setTimeout(() => {
+          successMessage.classList.remove('visible');
+          successMessage.classList.add('hidden');
+          form.style.display = 'block'; // Возвращаем форму
+          form.reset(); // Очищаем форму
+        }, 3000);
+      }
+    });
+})});
